@@ -1,0 +1,10 @@
+.b1 {
+	background-color: #000000;
+
+	background-image: url(images/images%20(7).jpg);
+	height: 610px;
+	width: 550px;
+	margin: 0px;
+	float: left;
+	background-repeat: repeat;
+}

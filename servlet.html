@@ -1,0 +1,126 @@
+<html>
+	<body>
+		<center>
+		<h1>
+			SERVLET
+		</h1>
+		</center>
+		<b>DEFINITION:-</b>
+		The servlet is a Java programming language class used to extend the capabilities of a server. Although servlets can respond to any types of requests, they are commonly used to extend the applications hosted by web servers, so they can be thought of as Java applets that run on servers instead of in web browsers.[1] These kinds of servlets are the Java counterpart to other dynamic Web content technologies such as PHP and ASP.NET.
+		<br />
+		<br />
+		<b>Introduction:-</b>
+
+Servlets are most often used to:[citation needed]
+Process or store data that was submitted from an HTML form
+Provide dynamic content such as the results of a database query
+Manage state information that does not exist in the stateless HTTP protocol, such as filling the articles into the shopping cart of the appropriate customer
+Technically speaking, a "servlet" is a Java class in Java EE that conforms to the Java Servlet API,[2] a standard for implementing Java classes which respond to requests. Servlets could in principle communicate over any client–server protocol, but they are most often used with the HTTP protocol. Thus "servlet" is often used as shorthand for "HTTP servlet".[3] Thus, a software developer may use a servlet to add dynamic content to a web server using the Java platform. The generated content is commonly HTML, but may be other data such as XML. Servlets can maintain state in session variables across many server transactions by using HTTP cookies, or URL rewriting.
+To deploy and run a servlet, a web container must be used. A web container (also known as a servlet container) is essentially the component of a web server that interacts with the servlets. The web container is responsible for managing the lifecycle of servlets, mapping a URL to a particular servlet and ensuring that the URL requester has the correct access rights.
+The Servlet API, contained in the Java package hierarchy javax.servlet, defines the expected interactions of the web container and a servlet.[3]
+A Servlet is an object that receives a request and generates a response based on that request. The basic Servlet package defines Java objects to represent servlet requests and responses, as well as objects to reflect the servlet's configuration parameters and execution environment. The package javax.servlet.http defines HTTP-specific subclasses of the generic servlet elements, including session management objects that track multiple requests and responses between the web server and a client. Servlets may be packaged in a WAR file as a web application.
+Servlets can be generated automatically from Java Server Pages (JSP) by the JavaServer Pages compiler. The difference between servlets and JSP is that servlets typically embed HTML inside Java code, while JSPs embed Java code in HTML. While the direct usage of servlets to generate HTML (as shown in the example below) has become rare, the higher level MVC web framework in Java EE (JSF) still explicitly uses the servlet technology for the low level request/response handling via the FacesServlet. A somewhat older usage is to use servlets in conjunction with JSPs in a pattern called "Model 2", which is a flavor of the model–view–controller pattern.
+The current version of Servlet is 3.1.
+History[edit]
+
+The Servlet specification was created by Sun Microsystems, with version 1.0 finalized in June 1997. Starting with version 2.3, the specification was developed under the Java Community Process. JSR 53 defined both the Servlet 2.3 and JavaServer Page 1.2 specifications. JSR 154 specifies the Servlet 2.4 and 2.5 specifications. As of March 26, 2010, the current version of the Servlet specification is 3.0.
+In his blog on java.net, Sun veteran and GlassFish lead Jim Driscoll details the history of servlet technology.[4] James Gosling first thought of servlets in the early days of Java, but the concept did not become a product until Sun shipped the Java Web Server[clarify] product. This was before what is now the Java Platform, Enterprise Edition was made into a specification.
+<br />
+<br />
+
+<b>Servlet API history:-</b>
+Servlet API version	Released	Platform	Important Changes
+Servlet 3.1	May 2013	JavaEE 7	Non-blocking I/O, HTTP protocol upgrade mechanism[5]
+Servlet 3.0	December 2009	JavaEE 6, JavaSE 6	Pluggability, Ease of development, Async Servlet, Security, File Uploading
+Servlet 2.5	September 2005	JavaEE 5, JavaSE 5	Requires JavaSE 5, supports annotation
+Servlet 2.4	November 2003	J2EE 1.4, J2SE 1.3	web.xml uses XML Schema
+Servlet 2.3	August 2001	J2EE 1.3, J2SE 1.2	Addition of Filter
+Servlet 2.2	August 1999	J2EE 1.2, J2SE 1.2	Becomes part of J2EE, introduced independent web applications in .war files
+Servlet 2.1	November 1998	Unspecified	First official specification, added RequestDispatcher, ServletContext
+Servlet 2.0		JDK 1.1	Part of Java Servlet Development Kit 2.0
+Servlet 1.0	June 1997		
+Compared with other web application models[edit]
+
+Question book-new.svg
+This section relies largely or entirely upon a single source. Relevant discussion may be found on the talk page. Please help improve this article by introducing citations to additional sources. (December 2013)
+The advantages of using servlets are their fast performance and ease of use combined with more power over traditional CGI (Common Gateway Interface). Traditional CGI scripts written in Java have a number of disadvantages when it comes to performance:
+When an HTTP request is made, a new process is created for each call of the CGI script. This overhead of process creation can be very system-intensive, especially when the script does relatively fast operations. Thus, process creation will take more time for CGI script execution. In contrast, for servlets, each request is handled by a separate Java thread within the web server process, omitting separate process forking by the HTTP daemon.
+Simultaneous CGI request causes the CGI script to be copied and loaded into memory as many times as there are requests. With servlets, there is only one copy that persists across requests and is shared between threads.
+Only a single instance answers all requests concurrently. This reduces memory usage and makes the management of persistent data easy.
+A servlet can be run by a servlet container in a restrictive environment, called a sandbox. This is similar to an applet that runs in the sandbox of the web browser. This makes a restrictive use of potentially harmful servlets possible.[3] CGI programs can of course also sandbox themselves, since they are simply OS processes.
+Technologies like FastCGI and its derivatives (including SCGI, WSGI) do not exhibit the performance disadvantages of CGI incurred by the constant process spawning. They are, however, roughly as simple as CGI. They are therefore also in contrast with servlets which are substantially more complex.
+
+<br />
+<br />
+
+<b>Life cycle of a servlet:-</b>
+
+Three methods are central to the life cycle of a servlet. These are init(), service(), and destroy(). They are implemented by every servlet and are invoked at specific times by the server.
+During initialization stage of the servlet life cycle, the web container initializes the servlet instance by calling the init() method, passing an object implementing the javax.servlet.ServletConfig interface. This configuration object allows the servlet to access name-value initialization parameters from the web application.
+After initialization, the servlet instance can service client requests. Each request is serviced in its own separate thread. The web container calls the service() method of the servlet for every request. The service() method determines the kind of request being made and dispatches it to an appropriate method to handle the request. The developer of the servlet must provide an implementation for these methods. If a request is made for a method that is not implemented by the servlet, the method of the parent class is called, typically resulting in an error being returned to the requester.
+Finally, the web container calls the destroy() method that takes the servlet out of service. The destroy() method, like init(), is called only once in the lifecycle of a servlet.
+The following is a typical user scenario of these methods.
+Assume that a user requests to visit a URL.
+The browser then generates an HTTP request for this URL.
+This request is then sent to the appropriate server.
+The HTTP request is received by the web server and forwarded to the servlet container.
+The container maps this request to a particular servlet.
+The servlet is dynamically retrieved and loaded into the address space of the container.
+The container invokes the init() method of the servlet.
+This method is invoked only when the servlet is first loaded into memory.
+It is possible to pass initialization parameters to the servlet so that it may configure itself.
+The container invokes the service() method of the servlet.
+This method is called to process the HTTP request.
+The servlet may read data that has been provided in the HTTP request.
+The servlet may also formulate an HTTP response for the client.
+The servlet remains in the container's address space and is available to process any other HTTP requests received from clients.
+The service() method is called for each HTTP request.
+The container may, at some point, decide to unload the servlet from its memory.
+The algorithms by which this decision is made are specific to each container.
+The container calls the servlet's destroy() method to relinquish any resources such as file handles that are allocated for the servlet; important data may be saved to a persistent store.
+The memory allocated for the servlet and its objects can then be garbage collected.
+<br />
+<br />
+
+<b>Example:-</b>
+<pre>
+The following example Servlet prints how many times its service() method was called.
+Note that HttpServlet is a subclass of GenericServlet, an implementation of the Servlet interface.
+The service() method of HttpServlet class dispatches requests to the methods doGet(), doPost(), doPut(), doDelete(), and so on; according to the HTTP request. In the example below method service() is overridden and does not distinguish which HTTP request method it serves.
+import java.io.IOException;
+ 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+ 
+public class ServletLifeCycleExample extends HttpServlet {
+ 
+    private int count;
+ 
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        getServletContext().log("init() called");
+        count = 0;
+    }
+ 
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        getServletContext().log("service() called");
+        count++;
+        response.getWriter().write("Incrementing the count: count = " + count);
+    }
+ 
+    @Override
+    public void destroy() {
+        getServletContext().log("destroy() called");
+    }
+ 
+}
+</pre>
+	</body>
+</html>

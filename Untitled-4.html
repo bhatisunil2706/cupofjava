@@ -1,0 +1,352 @@
+<html>
+<head>
+	<style type="text/css">
+		#id1
+		{
+			background-color:#FFFFFF;
+			width:100%;
+			height:70px;
+		}
+		#id2
+		{
+			background-color:;
+			width:100%;
+			height:550px;
+		}
+		#foo
+		{
+		background:-webkit-linear-gradient(top,  #2c354e 0%,#576a97 100%);
+			background-color:;
+			width:100%
+			height:100px;
+			color:#FFFFFF;
+			margin-top:38px;
+			border-radius:3px;
+			
+		}
+		#hd
+		{
+			color:#333366;
+			height:50px;
+			font-size:60px;
+		}
+		#id21
+		{
+			height:100%;
+			margin-top:30px;
+			width:22%;
+			background:-webkit-linear-gradient(top,  #2c354e 0%,#576a97 100%);
+			background-color:;
+			float:left;
+			border-radius:3px;
+		}
+		#id22
+		{
+			height:100%;
+			width:75%;
+			float:right;
+			margin-left:5px;
+			background-color:;
+			
+		}
+		#id221
+		{
+			height:6%;
+			width:100%;
+			background:-webkit-linear-gradient(top,  #2c354e 0%,#576a97 100%);
+			background-color:;
+		}
+		#hd1
+		{
+			color:#FFFFFF;
+			font-size:24px;
+		}
+		#cp
+		{
+			color:#333366;
+			font-size:24px;
+			margin-left:3px;
+		}
+		#id211
+		{
+			background-color:;
+			width:100%;
+			height:31%;
+		}
+		#id212
+		{
+			background-color:;
+			width:100%;
+			height:34%;
+		}
+		
+		#id213
+		{
+			background-color:;
+			width:100%;
+			height:35%;
+		}
+		#tb1
+		{
+			margin-left:30px;
+			margin-top:10px;
+		}
+		#txt1
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		
+		#txt2
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		
+		#txt3
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		
+		#txt4
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		
+		#txt5
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		
+		#txt6
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		#txt7
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+		#txt8
+		{
+			width:220px;;
+			height:25px;
+			margin-left:20px;
+		}
+
+	</style>
+	
+	
+	<script type="text/javascript" src="javascript/jquery-1.11.0.js"></script>
+	<!--<script type="text/javascript" src="javascript/myjsp.js"></script>-->
+	<script type="text/javascript" src="javascript/jquery.validate.pack.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+		
+		$("#fm").validate({ 
+		
+		rules:{
+			txt3:{
+				minlength:8
+				
+			},
+			txt4:{
+				minlength:8
+			},
+			txt5:{
+				minlength:8,
+				equalTo:"#txt4"
+			},
+			txt6:{
+			
+				email:true
+			}
+		
+		},
+		
+		
+		});
+		});
+		
+			
+	
+	
+	</script>
+	
+	
+</head>
+<body>
+<form action="Untitled-2.jsp"  id="fm" >
+	<header>
+		<div id="id1">
+			<center>
+				<h1 id="hd">cup<i>OF</i>java.com
+				<a href="index.html"><b style="color:#333366;float:right;font-size:20px;maring-right:10px;">Home</b></a></h1>
+			</center>
+			
+			
+		</div>
+	</header>
+	
+	<div id="id2">
+			<div id="id21">
+				<div id="id211">
+					<img src="css/images/images (2).jpg" style="width:80px; height:70px;margin:2px;"> <b style="margin:2px; color:#FFFFFF;"> “Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are not smart to debug it"</b>
+					<hr style="color:#333366;">
+				</div>
+				<div id="id212">
+					<img src="css/images/new3.jpg" style="width:80px; height:70px;margin:2px;"><b style="margin:2px;  color:#FFFFFF;">"To find the latest information on what's happening at Oracle, take a look at the resources in our Newsroom. Want to attend an Oracle event in person or online? Choose our event listing"</b><hr>
+				</div>
+				<div id="id213">
+					<img src="css/images/oraclecertificate.jpg" style="width:80px; height:70px;margin:2px;"><b style="margin:2px;  color:#FFFFFF;">"Oracle provides three certification examinations and two certificates for Java SE 7 programmers. The Java Tutorials can be a valuable resource to help you"
+					</b>
+				</div>
+			</div>
+			<div id="id22">
+				<div id="id221">
+					<center>
+						<h4 id="hd1">Register</h4>
+					</center>
+				</div>
+				<div id="id222">
+				<br>
+				<caption align="top" ><b id="cp"> Welcome to Java Programming world....</b></caption>
+				<br>
+					<table border="0" id="tb1">
+						
+						<tr>
+							<td id="td2"><b><label for="txt1">First Name</label></b></td>
+							<td id="td1"><input type="text" id="txt1" name="txt1" placeholder="First Name" required><span style="color:#FF0000;">*</span></td>
+						</tr>
+												
+						<tr>
+							<td id="td2"><b>Last Name</b></td>
+							<td id="td1"><input type="text" id="txt2" name="txt2" placeholder="Last Name" required><span style="color:#FF0000;">*</span></td>
+						</tr>
+						
+												
+						<tr>
+							<td id="td2"><b>Username</b></td>
+							<td id="td1"><input type="text" id="txt3" name="txt3" placeholder="Enter UserName" required> <span style="color:#FF0000;">*</span></td>
+						</tr>
+						<tr>
+						<td colspan="2">
+						<b style="color:#FF0000; margin-left:150px;">This username exists already!!</b>
+						</td>
+						</tr>
+												
+						<tr>
+							<td id="td2"><b>Password</b></td>
+							<td id="td1"><input type="password" id="txt4" name="txt4" placeholder="Password" required><span style="color:#FF0000;">*</span></td>
+						</tr>
+						
+												
+						<tr>
+							<td id="td2"><b>Retype Password</b></td>
+							<td id="td1"><input type="password" id="txt5" name="txt5" placeholder="Confirm Password" required> <span style="color:#FF0000;">*</span></td>
+						</tr>
+												
+						<tr>
+							<td id="td2"><b>Email </b></td>
+							<td id="td1"><input type="text" id="txt6" name="txt6"placeholder="Your Email" required> <span style="color:#FF0000;">*</span></td>
+						</tr>
+											
+						<tr>
+							<td id="td2"><b>Country</b> </td>
+							<td id="td1"><select name="vviii" id="txt7" name="list1">
+										<option>india</option>
+										<option>japan</option>
+										<option>aaustralia</option>
+										<option>newzeland</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option selected="selected">aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										<option>aaustralia</option>
+										</select><span style="color:#FF0000;">*</span></td>
+							</tr>
+							<tr>
+							<td colspan="2"></td>
+							</tr>
+							
+							<tr>
+							<td colspan="2"></td>
+							</tr>
+						<tr>
+						<td colspan="2"><b style="color:red;">* All fields are required to fillup.</b></td>
+						</tr>
+						
+							<tr>
+							<td colspan="2"></td>
+							</tr>
+							<tr>
+							<td colspan="2"></td>
+							</tr>
+						<tr>
+							<td colspan="2"><input type="checkbox" name="chckbox" required><b>I agree to the Terms and Conditions.</b></td>
+						</tr>
+						
+							<tr>
+							<td colspan="2"></td>
+							</tr>
+							<tr>
+							<td colspan="2"></td>
+							</tr>
+						<tr>
+							<center><td colspan="2"><input type="submit" name="Register" value="Register" id="b1" style="
+background:-webkit-linear-gradient(top,  #2c354e 0%,#576a97 100%); color:#FFFFFF;"></td></center>
+						</tr>
+					</table>
+				</div>
+			</div>
+	</div>
+	<footer>
+		<div id="foo">
+		copyright© 2000-02 Company Name, Inc. 
+All Original Content © 2000-02 Company Name, Inc. 
+Site Contents/Photography © 2001 Company Name, Inc. 
+All Original Content © 2000-02 Company Name, Inc., All Rights Reserved
+contact us:-900000000,898888888888,089767765656
+fax:-0987565646;
+		</div>
+		
+	</footer>
+</form>
+</body>
+</html>

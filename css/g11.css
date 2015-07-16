@@ -1,0 +1,14 @@
+.g11 {
+	margin: 10px;
+	padding: 0px;
+	border-top-style: double;
+	border-right-style: double;
+	border-bottom-style: double;
+	border-left-style: double;
+	border-top-color: #777777;
+	border-right-color: #777777;
+	border-bottom-color: #777777;
+	border-left-color: #777777;
+	height: 25px;
+	width: 170px;
+}

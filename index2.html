@@ -1,0 +1,48 @@
+
+<html>
+<head>
+<style type="text/css">
+	#frm1
+	{
+		background:-webkit-linear-gradient(top,  #2c354e 0%,#576a97 100%);
+		color:#FFFFFF;
+		
+		border-right:groove;
+	}
+	#ch1
+	{
+		border-bottom:;
+	}
+</style>
+
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+  
+  function change()
+  {
+  	document.getElementById('ch2').cols="30%,*";
+  }
+</script>
+
+
+		<jsp:useBean id="require" class="com.Mybean2" scope="session"/>
+
+</head>
+
+<frameset rows="23%,*" scrolling="no" frameborder="0">
+	<frame src="afterlogin1.jsp" id="ch1" scrolling="no" frameborder="0">
+		<frame name="frame2" src="next.html" resizable="false" frameborder="0" scrolling="no">
+	
+	</frameset><noframes></noframes>
+	
+	<%
+		String gift=require.getText1();
+		
+		
+	pageContext.setAttribute("user",gift,PageContext.APPLICATION_SCOPE);
+			
+	 %>
+	
+</html>
